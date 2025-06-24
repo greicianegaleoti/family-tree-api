@@ -1,8 +1,12 @@
 const express = require('express');
+const cors = require('cors'); // Adicionado para habilitar o CORS
+
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(cors()); //  Isso habilita o CORS para todas as origens
 app.use(express.json());
+
 
 // Dados fictícios da Família Corleone com imagens
 let members = [
