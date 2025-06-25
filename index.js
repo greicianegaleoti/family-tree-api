@@ -1,21 +1,20 @@
 const express = require('express');
 const cors = require('cors'); // Adicionado para habilitar o CORS
-
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors()); //  Isso habilita o CORS para todas as origens
 
+const baseImageURL = 'https://mafia-family-tree.netlify.app/assets/';
 
 const members = [
-  // Família Corleone (sangue, casamento e descendentes)
   {
     id: 1,
     name: 'Vito Corleone',
     role: 'Don',
     loyalty: 'High',
     location: 'New York',
-    image: 'Vito-Corleone.jpg'
+    image: `${baseImageURL}Vito-Corleone.jpg`
   },
   {
     id: 2,
@@ -23,7 +22,7 @@ const members = [
     role: "Vito's wife, Mama",
     loyalty: 'High',
     location: 'New York',
-    image: 'Carmela-Corleone.jpg'
+    image: `${baseImageURL}Carmela-Corleone.jpg`
   },
   {
     id: 3,
@@ -31,7 +30,7 @@ const members = [
     role: "Vito's eldest son",
     loyalty: 'High',
     location: 'New York',
-    image: 'Sonny-Corleone.jpg'
+    image: `${baseImageURL}Sonny-Corleone.jpg`
   },
   {
     id: 4,
@@ -39,7 +38,7 @@ const members = [
     role: "Sonny's mistress",
     loyalty: 'Medium',
     location: 'New York',
-    image: 'Lucy-Mancini.jpg'
+    image: `${baseImageURL}Lucy-Mancini.jpg`
   },
   {
     id: 5,
@@ -47,7 +46,7 @@ const members = [
     role: "Sonny's illegitimate son",
     loyalty: 'High',
     location: 'New York',
-    image: 'Vincent-Corleone.jpg'
+    image: `${baseImageURL}Vincent-Corleone.jpg`
   },
   {
     id: 6,
@@ -55,7 +54,7 @@ const members = [
     role: "Vito's middle son",
     loyalty: 'Low',
     location: 'New York',
-    image: 'Fredo-Corleone.jpg'
+    image: `${baseImageURL}Fredo-Corleone.jpg`
   },
   {
     id: 7,
@@ -63,7 +62,7 @@ const members = [
     role: "Vito's youngest son, next Don",
     loyalty: 'High',
     location: 'New York',
-    image: 'Michael-Corleone.jpg'
+    image: `${baseImageURL}Michael-Corleone.jpg`
   },
   {
     id: 8,
@@ -71,7 +70,7 @@ const members = [
     role: "Michael's first wife",
     loyalty: 'High',
     location: 'Sicily',
-    image: 'Apollonia-Vitelli-Corleone.jpg'
+    image: `${baseImageURL}Apollonia-Vitelli-Corleone.jpg`
   },
   {
     id: 9,
@@ -79,7 +78,7 @@ const members = [
     role: "Michael's second wife",
     loyalty: 'Medium',
     location: 'New York',
-    image: 'Kay-Adams-Corleone.jpg'
+    image: `${baseImageURL}Kay-Adams-Corleone.jpg`
   },
   {
     id: 10,
@@ -87,7 +86,7 @@ const members = [
     role: "Michael's eldest son",
     loyalty: 'Medium',
     location: 'New York',
-    image: 'Anthony-Corleone.jpg'
+    image: `${baseImageURL}Anthony-Corleone.jpg`
   },
   {
     id: 11,
@@ -95,7 +94,7 @@ const members = [
     role: "Michael's only daughter",
     loyalty: 'Medium',
     location: 'New York',
-    image: 'Mary-Corleone.jpg'
+    image: `${baseImageURL}Mary-Corleone.jpg`
   },
   {
     id: 12,
@@ -103,7 +102,7 @@ const members = [
     role: "Vito's only daughter",
     loyalty: 'High',
     location: 'New York',
-    image: 'Connie-Corleone.jpg'
+    image: `${baseImageURL}Connie-Corleone.jpg`
   },
   {
     id: 13,
@@ -111,7 +110,7 @@ const members = [
     role: "Connie's abusive husband",
     loyalty: 'Low',
     location: 'New York',
-    image: 'Carlo-Rizzi.jpg'
+    image: `${baseImageURL}Carlo-Rizzi.jpg`
   },
   {
     id: 14,
@@ -119,17 +118,15 @@ const members = [
     role: "Consigliere, unofficial adopted son",
     loyalty: 'High',
     location: 'New York',
-    image: 'Tom-Hagen.jpg'
+    image: `${baseImageURL}Tom-Hagen.jpg`
   },
-
-  // 🧱 Organização Interna (caporegimes, soldados, enforcers)
   {
     id: 20,
     name: 'Peter Clemenza',
     role: 'Caporegime',
     loyalty: 'High',
     location: 'Bronx',
-    image: 'Peter-Clemenza.jpg'
+    image: `${baseImageURL}Peter-Clemenza.jpg`
   },
   {
     id: 21,
@@ -137,7 +134,7 @@ const members = [
     role: 'Caporegime',
     loyalty: 'Medium',
     location: 'Brooklyn',
-    image: 'Salvatore-Tessio.jpg'
+    image: `${baseImageURL}Salvatore-Tessio.jpg`
   },
   {
     id: 22,
@@ -145,7 +142,7 @@ const members = [
     role: 'Caporegime',
     loyalty: 'Low',
     location: 'New York',
-    image: 'Frank-Pentangeli.jpg'
+    image: `${baseImageURL}Frank-Pentangeli.jpg`
   },
   {
     id: 23,
@@ -153,7 +150,7 @@ const members = [
     role: "Vito's personal enforcer",
     loyalty: 'Very High',
     location: 'New York',
-    image: 'Luca-Brasi.jpg'
+    image: `${baseImageURL}Luca-Brasi.jpg`
   },
   {
     id: 24,
@@ -161,7 +158,7 @@ const members = [
     role: 'Soldier (driver)',
     loyalty: 'Low',
     location: 'New York',
-    image: 'Paulie-Gatto.jpg'
+    image: `${baseImageURL}Paulie-Gatto.jpg`
   },
   {
     id: 25,
@@ -169,7 +166,7 @@ const members = [
     role: 'Soldier / Michael’s Enforcer',
     loyalty: 'High',
     location: 'New York',
-    image: 'Al-Neri.jpg'
+    image: `${baseImageURL}Al-Neri.jpg`
   },
   {
     id: 26,
@@ -177,7 +174,7 @@ const members = [
     role: 'Enforcer',
     loyalty: 'High',
     location: 'New York',
-    image: 'Rocco-Lampone.jpg'
+    image: `${baseImageURL}Rocco-Lampone.jpg`
   },
   {
     id: 27,
@@ -185,17 +182,15 @@ const members = [
     role: "Clemenza's Enforcer",
     loyalty: 'Medium',
     location: 'New York',
-    image: 'Willi-Cicci.jpg'
+    image: `${baseImageURL}Willi-Cicci.jpg`
   },
-
-  // 🤝 Sicilianos e aliados externos
   {
     id: 50,
     name: 'Fabrizio',
     role: "Sicilian bodyguard (traitor)",
     loyalty: 'Low',
     location: 'Sicily',
-    image: 'Fabrizio.jpg'
+    image: `${baseImageURL}Fabrizio.jpg`
   },
   {
     id: 51,
@@ -203,7 +198,7 @@ const members = [
     role: "Sicilian bodyguard (loyal)",
     loyalty: 'High',
     location: 'Sicily',
-    image: 'Calo.jpg'
+    image: `${baseImageURL}Calo.jpg`
   },
   {
     id: 52,
@@ -211,7 +206,7 @@ const members = [
     role: "Palermo boss, Michael’s protector",
     loyalty: 'High',
     location: 'Palermo',
-    image: 'Don-Tommasino.jpg'
+    image: `${baseImageURL}Don-Tommasino.jpg`
   }
 ];
 
